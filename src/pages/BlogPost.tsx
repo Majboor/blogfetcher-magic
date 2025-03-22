@@ -6,7 +6,7 @@ import { fetchBlogPost } from '@/services/blogService';
 import Layout from '@/components/Layout';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 import { motion } from 'framer-motion';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 
 const BlogPost = () => {
   const { slug = '' } = useParams<{ slug: string }>();

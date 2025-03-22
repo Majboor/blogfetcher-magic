@@ -11,7 +11,7 @@ interface MarkdownRendererProps {
 const MarkdownRenderer = ({ markdown, className = "" }: MarkdownRendererProps) => {
   // Parse the markdown to HTML
   const getHtml = () => {
-    const rawHtml = marked(markdown);
+    const rawHtml = marked.parse(markdown);
     return DOMPurify.sanitize(rawHtml);
   };
 
