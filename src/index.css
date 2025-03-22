@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 220 14% 14%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +92,82 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+
+  img {
+    @apply object-cover transition-all duration-300;
+  }
+
+  .prose {
+    @apply max-w-3xl mx-auto;
+  }
+
+  .prose h1 {
+    @apply text-3xl md:text-4xl font-bold mb-6 mt-10 font-display;
+  }
+
+  .prose h2 {
+    @apply text-2xl md:text-3xl font-semibold mb-4 mt-8 font-display;
+  }
+
+  .prose h3 {
+    @apply text-xl md:text-2xl font-medium mb-3 mt-6 font-display;
+  }
+
+  .prose p {
+    @apply text-base md:text-lg mb-6 leading-relaxed;
+  }
+
+  .prose ul {
+    @apply list-disc pl-8 mb-6 space-y-2;
+  }
+
+  .prose ol {
+    @apply list-decimal pl-8 mb-6 space-y-2;
+  }
+
+  .prose li {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+
+  .prose table {
+    @apply w-full mb-6 border-collapse;
+  }
+
+  .prose th {
+    @apply p-3 text-left font-medium bg-secondary border;
+  }
+
+  .prose td {
+    @apply p-3 border;
+  }
+
+  .prose blockquote {
+    @apply pl-4 border-l-4 border-primary/20 italic my-6;
+  }
+
+  .prose a {
+    @apply text-primary underline underline-offset-2 hover:text-primary/80 transition-colors;
+  }
+
+  .prose code {
+    @apply px-1.5 py-0.5 bg-secondary rounded text-sm;
+  }
+
+  .prose pre {
+    @apply p-4 bg-secondary rounded-md overflow-x-auto mb-6;
+  }
+
+  .prose img {
+    @apply rounded-md my-8 w-full shadow-md;
+  }
+
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-md dark:bg-black/70;
   }
 }
