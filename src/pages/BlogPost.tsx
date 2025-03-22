@@ -21,7 +21,7 @@ const BlogPost = () => {
         if (error) {
           console.error("Error fetching blog post:", error);
           toast.error("Couldn't load the article you requested.");
-          navigate('/blog');
+          navigate('/');
         }
       }
     }
@@ -77,7 +77,7 @@ const BlogPost = () => {
               We couldn't find the article you were looking for. It may have been removed or the URL might be incorrect.
             </p>
             <button
-              onClick={() => navigate('/blog')}
+              onClick={() => navigate('/')}
               className="mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50"
             >
               Back to Blog

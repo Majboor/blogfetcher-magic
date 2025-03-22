@@ -29,6 +29,7 @@ export async function fetchBlogPost(slug: string): Promise<BlogPost> {
 }
 
 // This is a mock function to simulate a list of recent blog posts
+// In a real application, this would fetch from the API
 export async function fetchRecentBlogPosts(): Promise<{ slug: string; title: string; description: string }[]> {
   return [
     {
@@ -50,6 +51,16 @@ export async function fetchRecentBlogPosts(): Promise<{ slug: string; title: str
       slug: "microsoft-server-licensing-explained",
       title: "Microsoft Server Licensing Explained Simply",
       description: "A simplified guide to understanding Microsoft Server licensing for IT professionals."
+    },
+    {
+      slug: "azure-vs-aws-for-business",
+      title: "Azure vs AWS: Which Cloud Service is Best for Your Business?",
+      description: "Compare Microsoft Azure and Amazon Web Services to determine the best cloud solution for your business needs."
+    },
+    {
+      slug: "volume-licensing-options-2025",
+      title: "Volume Licensing Options for Businesses in 2025",
+      description: "Explore the various volume licensing options available for businesses of all sizes in 2025."
     }
   ];
 }

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { fetchRecentBlogPosts } from '@/services/blogService';
 import Layout from '@/components/Layout';
 import { motion } from 'framer-motion';
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 
 const Blog = () => {
   const { data: blogPosts, isLoading, error } = useQuery({
@@ -22,13 +23,31 @@ const Blog = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl">
-              Our Blog
+              Digital Software Planet
             </h1>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-muted-foreground">
-              Stay updated with our latest insights, guides, and news about software licensing.
+              Your trusted partner for all official software licensing needs
             </p>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mb-12 max-w-3xl mx-auto p-8 bg-secondary/20 rounded-xl"
+        >
+          <h2 className="text-2xl font-bold text-primary mb-4">About Us</h2>
+          <p className="text-muted-foreground">
+            We are proud to be partnered with Microsoft, offering a wide range of official licenses that cater to your business requirements. 
+            Get instant access to the finest software solutions. Our wholesale and bulk purchase options ensure that you get the best deals on 
+            official licenses, without compromising on quality.
+          </p>
+        </motion.div>
+
+        <h2 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl mb-8">
+          Latest Articles
+        </h2>
 
         {isLoading ? (
           <div className="flex justify-center">
@@ -57,6 +76,28 @@ const Blog = () => {
             ))}
           </div>
         )}
+
+        <div className="mt-12">
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious href="#" />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#" isActive>1</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#">2</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#">3</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationNext href="#" />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </div>
       </div>
     </Layout>
   );
@@ -71,7 +112,7 @@ interface BlogCardProps {
 const BlogCard = ({ title, description, slug }: BlogCardProps) => {
   return (
     <Link 
-      to={`/blog/${slug}`}
+      to={`/${slug}`}
       className="group block overflow-hidden rounded-lg border bg-background shadow-sm transition-all hover:shadow-md"
     >
       <div className="p-6">
