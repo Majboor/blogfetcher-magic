@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Separator } from '@/components/ui/separator';
 
 const Footer = () => {
   return (
@@ -69,10 +70,27 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        
         <div className="mt-10 pt-6 border-t">
-          <p className="text-center text-muted-foreground text-sm">
-            &copy; {new Date().getFullYear()} Digital Software Planet. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-center text-muted-foreground text-sm">
+              &copy; {new Date().getFullYear()} Digital Software Planet. All rights reserved.
+            </p>
+            <div className="mt-4 md:mt-0">
+              <a 
+                href="http://techrealm.pk/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-sm text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
+              >
+                Built by
+                <span className="font-semibold">techrealm.pk</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M7 7h10v10M7 17L17 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </motion.footer>
